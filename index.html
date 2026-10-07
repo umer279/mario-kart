@@ -1,0 +1,73 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Kart Rush</title>
+    <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 32 32%22%3E%3Ccircle cx=%2216%22 cy=%2216%22 r=%2214%22 fill=%22%23e53935%22/%3E%3Ctext x=%2216%22 y=%2222%22 font-size=%2216%22 text-anchor=%22middle%22 fill=%22white%22 font-family=%22sans-serif%22 font-weight=%22bold%22%3EK%3C/text%3E%3C/svg%3E" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Luckiest+Guy&family=Nunito:wght@700;900&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <div id="app"></div>
+    <div id="hud"></div>
+    <canvas id="minimap" width="200" height="200" class="hidden"></canvas>
+
+    <div id="title" class="screen">
+      <div class="panel">
+        <h1>KART RUSH</h1>
+        <p class="tag">8 racers &middot; 3 laps &middot; items &middot; drift boosts</p>
+        <div class="buttons">
+          <button data-players="1">1 Player</button>
+          <button data-players="2">2 Players</button>
+        </div>
+        <div class="controls">
+          <div>
+            <h3>Player 1</h3>
+            <p><kbd>W</kbd><kbd>A</kbd><kbd>S</kbd><kbd>D</kbd> drive</p>
+            <p><kbd>Space</kbd> hop / drift</p>
+            <p><kbd>E</kbd> use item</p>
+          </div>
+          <div>
+            <h3>Player 2</h3>
+            <p><kbd>&uarr;</kbd><kbd>&larr;</kbd><kbd>&darr;</kbd><kbd>&rarr;</kbd> drive</p>
+            <p><kbd>R-Shift</kbd> hop / drift</p>
+            <p><kbd>Enter</kbd> use item</p>
+          </div>
+        </div>
+        <p class="hint">
+          Hold drift while turning, release on blue or orange sparks for a boost.<br />
+          Hold back while firing a shell to throw it behind you. Solo mode also accepts arrows.
+          <kbd>Esc</kbd> pause &middot; <kbd>M</kbd> mute
+        </p>
+      </div>
+    </div>
+
+    <div id="pause" class="screen hidden">
+      <div class="panel small">
+        <h2>Paused</h2>
+        <div class="buttons">
+          <button id="btn-resume">Resume</button>
+          <button id="btn-quit" class="ghost">Quit to menu</button>
+        </div>
+      </div>
+    </div>
+
+    <div id="results" class="screen hidden">
+      <div class="panel">
+        <h2>Results</h2>
+        <table id="results-table"></table>
+        <div class="buttons">
+          <button id="btn-retry">Race again</button>
+          <button id="btn-menu" class="ghost">Menu</button>
+        </div>
+      </div>
+    </div>
+
+    <script type="module" src="/src/main.js"></script>
+  </body>
+</html>
